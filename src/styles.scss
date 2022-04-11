@@ -1,2 +1,6 @@
 @import "cssReset.scss", "flexboxgrid.scss", "layout.scss", "text-styles.scss",
 "buttons.scss";
+
+body {
+  max-width: 1200px;
+}
