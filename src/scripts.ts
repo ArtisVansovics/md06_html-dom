@@ -12,6 +12,8 @@ const box03El = document.querySelector<HTMLDivElement>('#box_03');
 const box04El = document.querySelector<HTMLDivElement>('#box_04');
 const box05El = document.querySelector<HTMLDivElement>('#box_05');
 const box06El = document.querySelector<HTMLDivElement>('#box_06');
+const blueBoxEl = document.querySelectorAll<HTMLDivElement>('.js-blue-box');
+const bodyEl = document.querySelector<HTMLBodyElement>('body');
 
 // Clicking on btn_01 changes box_01 background to yellow
 btn01El.addEventListener('click', () => {
@@ -37,4 +39,22 @@ btn04El.addEventListener('click', () => {
 const bgColors = ['blue', 'yellow', 'green', 'orange', 'cyan'];
 btn05El.addEventListener('click', () => {
   box05El.style.backgroundColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+});
+// Clicking on btn_06 makes number in box_06 increase by 1 every 3 seconds (stops at 10)
+btn06El.addEventListener('click', () => {
+  let btnCount = parseInt(box06El.innerText, 10);
+  setInterval(() => {
+    if (btnCount !== 10) {
+      btnCount += 1;
+      box06El.innerText = btnCount.toString(10);
+    }
+  }, 3000);
+});
+// Clicking on btn_07 changes all blue-box element BG colors to #18D5E1
+// and body BG color changes to #000000
+btn07El.addEventListener('click', () => {
+  bodyEl.style.backgroundColor = '#000000';
+  for (let i = 0; i < blueBoxEl.length; i += 1) {
+    blueBoxEl[i].style.backgroundColor = '#18D5E1';
+  }
 });
