@@ -12,8 +12,12 @@ const box03El = document.querySelector<HTMLDivElement>('#box_03');
 const box04El = document.querySelector<HTMLDivElement>('#box_04');
 const box05El = document.querySelector<HTMLDivElement>('#box_05');
 const box06El = document.querySelector<HTMLDivElement>('#box_06');
+
 const blueBoxEl = document.querySelectorAll<HTMLDivElement>('.js-blue-box');
 const bodyEl = document.querySelector<HTMLBodyElement>('body');
+
+const inputEl = document.querySelector<HTMLInputElement>('#my_input');
+const inputTextEl = document.querySelector<HTMLTextAreaElement>('#input_text');
 
 // Clicking on btn_01 changes box_01 background to yellow
 btn01El.addEventListener('click', () => {
@@ -94,3 +98,12 @@ box05El.addEventListener('mouseleave', () => {
   clearInterval(intervalCount);
   box05El.innerText = '0';
 });
+
+// While filling in input field, the text also appears under it
+const updateValue = (e: { target: { value: string; }; }) => {
+  inputTextEl.textContent = e.target.value;
+};
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+inputEl.addEventListener('input', updateValue);

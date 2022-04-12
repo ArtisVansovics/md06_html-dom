@@ -4,3 +4,16 @@
 body {
   max-width: 1200px;
 }
+
+.input {
+  background: #FFFFFF;
+  border: 2px solid #E5E7EB;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.input-text {
+  margin-top: 20px;
+  font-weight: 700;
+}
