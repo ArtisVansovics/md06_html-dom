@@ -21,7 +21,7 @@ const inputTextEl = document.querySelector<HTMLTextAreaElement>('#input_text');
 
 // Clicking on btn_01 changes box_01 background to yellow
 btn01El.addEventListener('click', () => {
-  box01El.style.backgroundColor = 'yellow';
+  box01El.style.backgroundColor = '#E2CF22';
 });
 
 // Clicking on btn_02 changes box_02 text to SUCCESS
@@ -44,7 +44,7 @@ btn04El.addEventListener('click', () => {
 });
 
 // Clicking on btn_05 changes box_05 background to one of five possible colors
-const bgColors = ['blue', 'yellow', 'green', 'orange', 'cyan'];
+const bgColors = ['#017187', '#5C0187B5', '#8711018', '#01870EA0', '#011E87'];
 btn05El.addEventListener('click', () => {
   box05El.style.backgroundColor = bgColors[Math.floor(Math.random() * bgColors.length)];
 });
@@ -100,8 +100,8 @@ box05El.addEventListener('mouseleave', () => {
 });
 
 // While filling in input field, the text also appears under it
-const updateValue = (e: { target: { value: string; }; }) => {
-  inputTextEl.textContent = e.target.value;
+const updateValue = (t: { target: { value: string; }; }) => {
+  inputTextEl.textContent = t.target.value;
 };
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

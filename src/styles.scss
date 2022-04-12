@@ -1,8 +1,10 @@
-@import "cssReset.scss", "flexboxgrid.scss", "layout.scss", "text-styles.scss",
-"buttons.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import "cssReset.scss", "flexboxgrid.scss", "layout.scss", "buttons.scss";
 
 body {
   max-width: 1200px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .input {
