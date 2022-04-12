@@ -25,3 +25,16 @@ btn02El.addEventListener('click', () => {
 btn03El.addEventListener('click', () => {
   box03El.style.display = 'none';
 });
+// Clicking on btn_04 toggles box_04 visibility
+btn04El.addEventListener('click', () => {
+  if (box04El.style.display === 'none') {
+    box04El.style.display = 'block';
+  } else {
+    box04El.style.display = 'none';
+  }
+});
+// Clicking on btn_05 changes box_05 background to one of five possible colors
+const bgColors = ['blue', 'yellow', 'green', 'orange', 'cyan'];
+btn05El.addEventListener('click', () => {
+  box05El.style.backgroundColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+});
