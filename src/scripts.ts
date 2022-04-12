@@ -19,14 +19,17 @@ const bodyEl = document.querySelector<HTMLBodyElement>('body');
 btn01El.addEventListener('click', () => {
   box01El.style.backgroundColor = 'yellow';
 });
+
 // Clicking on btn_02 changes box_02 text to SUCCESS
 btn02El.addEventListener('click', () => {
   box02El.innerText = 'SUCCESS';
 });
+
 // Clicking on btn_03 makes box_03 invisible
 btn03El.addEventListener('click', () => {
   box03El.style.display = 'none';
 });
+
 // Clicking on btn_04 toggles box_04 visibility
 btn04El.addEventListener('click', () => {
   if (box04El.style.display === 'none') {
@@ -35,11 +38,13 @@ btn04El.addEventListener('click', () => {
     box04El.style.display = 'none';
   }
 });
+
 // Clicking on btn_05 changes box_05 background to one of five possible colors
 const bgColors = ['blue', 'yellow', 'green', 'orange', 'cyan'];
 btn05El.addEventListener('click', () => {
   box05El.style.backgroundColor = bgColors[Math.floor(Math.random() * bgColors.length)];
 });
+
 // Clicking on btn_06 makes number in box_06 increase by 1 every 3 seconds (stops at 10)
 btn06El.addEventListener('click', () => {
   let btnCount = parseInt(box06El.innerText, 10);
@@ -50,6 +55,7 @@ btn06El.addEventListener('click', () => {
     }
   }, 3000);
 });
+
 // Clicking on btn_07 changes all blue-box element BG colors to #18D5E1
 // and body BG color changes to #000000
 btn07El.addEventListener('click', () => {
@@ -58,6 +64,7 @@ btn07El.addEventListener('click', () => {
     blueBoxEl[i].style.backgroundColor = '#18D5E1';
   }
 });
+
 // Hovering on box_01 changes its background to red
 box01El.addEventListener('mouseenter', () => {
   box01El.style.backgroundColor = 'red';
@@ -65,4 +72,25 @@ box01El.addEventListener('mouseenter', () => {
 
 box01El.addEventListener('mouseleave', () => {
   box01El.style.backgroundColor = ' #1FC2AE';
+});
+
+// Hovering mouse on box_05 its number increases by 1 (stops at 10)
+// Moving the mouse away from box_05 resets and stops the count
+
+// eslint-disable-next-line no-undef
+let intervalCount: NodeJS.Timer;
+
+box05El.addEventListener('mouseenter', () => {
+  let btnCount = parseInt(box05El.innerText, 10);
+  intervalCount = setInterval(() => {
+    if (btnCount !== 10) {
+      btnCount += 1;
+      box05El.innerText = btnCount.toString(10);
+    }
+  }, 1000);
+});
+
+box05El.addEventListener('mouseleave', () => {
+  clearInterval(intervalCount);
+  box05El.innerText = '0';
 });
