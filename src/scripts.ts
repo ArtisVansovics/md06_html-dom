@@ -58,3 +58,11 @@ btn07El.addEventListener('click', () => {
     blueBoxEl[i].style.backgroundColor = '#18D5E1';
   }
 });
+// Hovering on box_01 changes its background to red
+box01El.addEventListener('mouseenter', () => {
+  box01El.style.backgroundColor = 'red';
+});
+
+box01El.addEventListener('mouseleave', () => {
+  box01El.style.backgroundColor = ' #1FC2AE';
+});
