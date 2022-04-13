@@ -99,10 +99,7 @@ box05El.addEventListener('mouseleave', () => {
 });
 
 // While filling in input field, the text also appears under it
-const updateValue = (t: { target: { value: string; }; }) => {
-  inputTextEl.textContent = t.target.value;
-};
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-inputEl.addEventListener('input', updateValue);
+inputEl.addEventListener('input', () => {
+  inputTextEl.textContent = inputEl.value;
+});
