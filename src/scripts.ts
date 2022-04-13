@@ -81,8 +81,7 @@ box01El.addEventListener('mouseleave', () => {
 // Hovering mouse on box_05 its number increases by 1 (stops at 10)
 // Moving the mouse away from box_05 resets and stops the count
 
-// eslint-disable-next-line no-undef
-let intervalCount: NodeJS.Timer;
+let intervalCount: any;
 
 box05El.addEventListener('mouseenter', () => {
   let btnCount = parseInt(box05El.innerText, 10);
